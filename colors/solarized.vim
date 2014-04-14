@@ -791,7 +791,6 @@ exe "let s:fg_cyan      = ' ".s:vmode."fg=".s:cyan   ."'"
 " JavaScript highlighting "{{{
 " ---------------------------------------------------------------------
 
-exe "hi! Normal"         .s:fmt_bold   .s:fg_base1  .s:bg_back
 
 " yellow orange red magenta violet blue cyan green 
 " fmt_none, fmt_bold, fmt_bldi, fmt_undr, fmt_undb, fmt_undi, fmt_uopt, fmt_curl, fmt_ital, fmt_stnd, fmt_revr, fmt_revb
@@ -1132,6 +1131,15 @@ augroup SolarizedHiTrail
     endif
 augroup END
 " }}}
+
+function! SolarizedBoldNormal()
+    exe "hi! Normal" .s:fmt_bold   .s:fg_base1  .s:bg_back 
+endfunction
+" if !exists(":SolarizedBoldNormal")
+    " command SolarizedBoldNormal :call s:SolarizedBoldNormal()
+" endif
+
+
 " Menus "{{{
 " ---------------------------------------------------------------------
 " Turn off Solarized menu by including the following assignment in your .vimrc:
