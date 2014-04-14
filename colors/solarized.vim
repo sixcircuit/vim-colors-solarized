@@ -800,10 +800,10 @@ exe "hi! jsSpecial"             .s:fmt_none .s:fg_base01 .s:bg_none
 
 exe "hi! jsFuncCall"            .s:fmt_none .s:fg_base1 .s:bg_none
 exe "hi! jsFuncName"            .s:fmt_none .s:fg_base1 .s:bg_none
-" exe "hi! jsFuncArgs"            .s:fmt_none .s:fg_base0 .s:bg_none
+" exe "hi! jsFuncArgs"            .s:fmt_none .s:fg_base1 .s:bg_none
 exe "hi! jsFuncArgCommas"       .s:fmt_none .s:fg_base00 .s:bg_none
-exe "hi! jsFuncBraces"          .s:fmt_none .s:fg_base00 .s:bg_none
-exe "hi! jsFuncParens"          .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsFuncBraces"          .s:fmt_none .s:fg_green .s:bg_none
+exe "hi! jsFuncParens"          .s:fmt_none .s:fg_green .s:bg_none
 
 exe "hi! jsPrototype"           .s:fmt_bold .s:fg_base00 .s:bg_none
 
@@ -825,7 +825,7 @@ exe "hi! jsStorageClass"        .s:fmt_bold .s:fg_blue .s:bg_none
 exe "hi! jsArguments"           .s:fmt_bold .s:fg_blue .s:bg_none
 exe "hi! jsThis"                .s:fmt_bold .s:fg_blue .s:bg_none
 exe "hi! jsSelf"                .s:fmt_bold .s:fg_magenta .s:bg_none
-exe "hi! jsOperatorWord"            .s:fmt_bold .s:fg_blue .s:bg_none
+exe "hi! jsOperatorWord"        .s:fmt_bold .s:fg_blue .s:bg_none
 exe "hi! jsOperator"            .s:fmt_bold .s:fg_base0 .s:bg_none
 
 exe "hi! jsTernaryIfOperator"   .s:fmt_bold .s:fg_base0 .s:bg_none
@@ -1132,6 +1132,10 @@ augroup SolarizedHiTrail
     endif
 augroup END
 " }}}
+
+function! SolarizedSetNormal()
+    exe "hi! Normal" .s:fmt_none   .s:fg_base1  .s:bg_back 
+endfunction
 
 function! SolarizedBoldNormal()
     exe "hi! Normal" .s:fmt_bold   .s:fg_base1  .s:bg_back 
