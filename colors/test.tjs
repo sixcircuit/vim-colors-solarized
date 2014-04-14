@@ -1,0 +1,62 @@
+
+function a(){
+    var err = _error;
+    var a = arguments
+    var a = arguments.length;
+    var a = arguments[0];
+    var a = arguments[101];
+
+    // comment
+
+    /* block comment
+     *
+     */
+    
+    var obj = {
+        hello: "Hello World!",
+        goodbye: "Goodbye World!"
+    };
+
+    function blahMe(a, b){
+        var a = a < 2 ? a : 3;
+        return(a + b);
+    }
+
+    blahMe(1, 2, null, undefined);
+
+    this.blah(function(a, b){
+
+        var self = this;
+
+        for(var i = 0; i < [].length; i++){
+
+        }
+
+        if(true){
+            var a = arguments[];
+        }else if(false){
+            var a = arguments[];
+        }
+        
+        if(arguments.length){
+            rpc._error = arguments[0] ;
+        }else{
+            rpc._error = self.statusCodes().error();
+        }
+    });
+
+    await{ this.async("a", 'b', 123, 123.4, defer(var result)); }
+
+    function User(){}
+
+    User.prototype.userName = function(name){
+        if(name === undefined){
+            return(this._userName);
+        }else{
+            this._userName = name;
+            return(this);
+        }
+    };
+
+}
+ 
