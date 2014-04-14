@@ -536,7 +536,7 @@ endif
 " note that link syntax to avoid duplicate configuration doesn't work with the
 " exe compiled formats
 
-exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
+exe "hi! Normal"         .s:fmt_none   .s:fg_base1  .s:bg_back
 
 exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
@@ -791,104 +791,103 @@ exe "let s:fg_cyan      = ' ".s:vmode."fg=".s:cyan   ."'"
 " JavaScript highlighting "{{{
 " ---------------------------------------------------------------------
 
-" exe "hi! Normal"                .s:fmt_none   .s:fg_base1 .s:bg_back
+exe "hi! Normal"         .s:fmt_bold   .s:fg_base1  .s:bg_back
 
-exe "hi! jsFuncCall"            .s:fmt_none .s:fg_yellow .s:bg_none
-exe "hi! jsFuncName"            .s:fmt_none .s:fg_yellow .s:fmt_bold
-exe "hi! jsFuncArgs"            .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsFuncArgCommas"       .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsFuncBraces"          .s:fmt_none .s:fg_orange .s:bg_none
-exe "hi! jsFuncParens"          .s:fmt_none .s:fg_orange .s:bg_none
+" yellow orange red magenta violet blue cyan green 
+" fmt_none, fmt_bold, fmt_bldi, fmt_undr, fmt_undb, fmt_undi, fmt_uopt, fmt_curl, fmt_ital, fmt_stnd, fmt_revr, fmt_revb
+"
+exe "hi! jsNoise"               .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsSpecial"             .s:fmt_none .s:fg_base01 .s:bg_none
 
+exe "hi! jsFuncCall"            .s:fmt_bold .s:fg_base1 .s:bg_none
+exe "hi! jsFuncName"            .s:fmt_bold .s:fg_base1 .s:bg_none
+" exe "hi! jsFuncArgs"            .s:fmt_none .s:fg_base0 .s:bg_none
+exe "hi! jsFuncArgCommas"       .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsFuncBraces"          .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsFuncParens"          .s:fmt_none .s:fg_base00 .s:bg_none
+
+exe "hi! jsPrototype"           .s:fmt_none .s:fg_base00 .s:bg_none
+
+exe "hi! jsLabel"               .s:fmt_none .s:fg_base0 .s:bg_none
+exe "hi! jsStatement"           .s:fmt_none .s:fg_base0 .s:bg_none
+
+exe "hi! jsFunction"            .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsReturn"              .s:fmt_none .s:fg_cyan .s:bg_none
+exe "hi! jsAwait"               .s:fmt_none .s:fg_cyan .s:bg_none
+exe "hi! jsDefer"               .s:fmt_none .s:fg_cyan .s:bg_none
+
+exe "hi! jsKeyword"             .s:fmt_none .s:fg_base0 .s:bg_none
+exe "hi! jsException"           .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsRepeat"              .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsConditional"         .s:fmt_none .s:fg_base00 .s:bg_none
+exe "hi! jsBranch"              .s:fmt_none .s:fg_base00 .s:bg_none
+
+exe "hi! jsStorageClass"        .s:fmt_none .s:fg_blue .s:bg_none
+exe "hi! jsArguments"           .s:fmt_none .s:fg_blue .s:bg_none
+exe "hi! jsThis"                .s:fmt_none .s:fg_blue .s:bg_none
+exe "hi! jsSelf"                .s:fmt_none .s:fg_magenta .s:bg_none
+
+exe "hi! jsOperator"            .s:fmt_none .s:fg_base0 .s:bg_none
+exe "hi! jsTernaryIfOperator"   .s:fmt_none .s:fg_base0 .s:bg_none
+
+exe "hi! jsStringS"             .s:fmt_none .s:fg_yellow .s:bg_none
+exe "hi! jsStringD"             .s:fmt_none .s:fg_yellow .s:bg_none
+exe "hi! jsNumber"              .s:fmt_none .s:fg_yellow .s:bg_none
+exe "hi! jsFloat"               .s:fmt_none .s:fg_yellow .s:bg_none
+
+exe "hi! jsNull"                .s:fmt_none .s:fg_yellow .s:bg_none
+exe "hi! jsUndefined"           .s:fmt_none .s:fg_yellow .s:bg_none
+exe "hi! jsBooleanTrue"         .s:fmt_none .s:fg_yellow .s:bg_none
+exe "hi! jsBooleanFalse"        .s:fmt_none .s:fg_yellow .s:bg_none
+
+exe "hi! jsObjectKey"           .s:fmt_bold .s:fg_base0 .s:bg_none
+exe "hi! jsBrackets"            .s:fmt_none .s:fg_base0 .s:bg_none
+exe "hi! jsParens"              .s:fmt_none .s:fg_base0 .s:bg_none
+exe "hi! jsBraces"              .s:fmt_none .s:fg_base0 .s:bg_none
+
+" Default comment behavior is fine
 
 " exe "hi! jsComment"             .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsLineComment"         .s:fmt_none .s:fg_base01 .s:bg_none
-" exe "hi! jsEnvComment"          .s:fmt_none .s:fg_base01 .s:bg_none
-" exe "hi! jsDocComment"          .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsCommentTodo"         .s:fmt_none .s:fg_base01 .s:bg_none
-" exe "hi! jsCvsTag"              .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsEnvComment"          .s:fmt_none .s:fg_base01 .s:bg_none
+"
+" exe "hi! jsDocComment"          .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsDocTags"             .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsDocSeeTag"           .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsDocType"             .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsDocTypeNoParam"      .s:fmt_none .s:fg_base01 .s:bg_none
 " exe "hi! jsDocParam"            .s:fmt_none .s:fg_base01 .s:bg_none
-
-exe "hi! jsPrototype"           .s:fmt_none .s:fg_yellow .s:bg_none
-
-exe "hi! jsLabel"               .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsStatement"           .s:fmt_none .s:fg_base01 .s:bg_none
-
-exe "hi! jsKeyword"             .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsReturn"              .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsAwait"               .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsDefer"               .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsException"           .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsRepeat"              .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsFunction"            .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsConditional"         .s:fmt_none .s:fg_green .s:bg_none
-exe "hi! jsBranch"              .s:fmt_none .s:fg_green .s:bg_none
-
-exe "hi! jsStorageClass"        .s:fmt_none .s:fg_blue .s:bg_none
-exe "hi! jsArguments"           .s:fmt_none .s:fg_violet .s:bg_none
-exe "hi! jsThis"                .s:fmt_none .s:fg_violet .s:bg_none
-
-exe "hi! jsOperator"            .s:fmt_none .s:fg_base1 .s:bg_none
-exe "hi! jsTernaryIfOperator"   .s:fmt_none .s:fg_base1 .s:bg_none
-
-" yellow orange red magenta violet blue cyan green 
-
-" exe "hi! jsArguments"           .s:fmt_none .s:fg_magenta .s:bg_none
-" exe "hi! jsThis"                .s:fmt_none .s:fg_violet .s:bg_none
-"
-" exe "hi! jsOperator"            .s:fmt_none .s:fg_orange .s:bg_none
-" exe "hi! jsTernaryIfOperator"   .s:fmt_none .s:fg_base1 .s:bg_none
-"
-" Values
-exe "hi! jsStringS"             .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsStringD"             .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsNumber"              .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsFloat"               .s:fmt_none .s:fg_cyan .s:bg_none
-
-exe "hi! jsNull"                .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsUndefined"           .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsBooleanTrue"         .s:fmt_none .s:fg_cyan .s:bg_none
-exe "hi! jsBooleanFalse"        .s:fmt_none .s:fg_cyan .s:bg_none
-
-exe "hi! jsObjectKey"           .s:fmt_none .s:fg_yellow  .s:bg_none
-exe "hi! jsBrackets"            .s:fmt_none .s:fg_base0 .s:bg_none
-exe "hi! jsParens"              .s:fmt_none .s:fg_base0 .s:bg_none
-exe "hi! jsBraces"              .s:fmt_none .s:fg_base0 .s:bg_none
+" exe "hi! jsCvsTag"              .s:fmt_none .s:fg_base01 .s:bg_none
 
 " Don't know, don't care past here
 
-exe "hi! jsArrowFunction"       .s:fmt_none .s:fg_green .s:bg_none
-
-exe "hi! jsRegexpString"        .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpBoundary"      .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpQuantifier"    .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpOr"            .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpMod"           .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpBackRef"       .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpGroup"         .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsRegexpCharClass"     .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsCharacter"           .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsFuncArgRest"         .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsError"               .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsParensError"         .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsParensErrA"          .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsParensErrB"          .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsParensErrC"          .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsNoise"               .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsSpecial"             .s:fmt_none .s:fg_base01 .s:bg_none
-
-exe "hi! jsTemplateVar"         .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsTemplateString"      .s:fmt_none .s:fg_base01 .s:bg_none
-
-exe "hi! jsGlobalObjects"       .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsNan"                 .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsExceptions"          .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsFutureKeys"          .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! jsBuiltins"            .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsArrowFunction"       .s:fmt_none .s:fg_base01 .s:bg_none
+"
+" exe "hi! jsRegexpString"        .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpBoundary"      .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpQuantifier"    .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpOr"            .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpMod"           .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpBackRef"       .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpGroup"         .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsRegexpCharClass"     .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsCharacter"           .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsFuncArgRest"         .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsError"               .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsParensError"         .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsParensErrA"          .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsParensErrB"          .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsParensErrC"          .s:fmt_none .s:fg_base01 .s:bg_none
+"
+" exe "hi! jsTemplateVar"         .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsTemplateString"      .s:fmt_none .s:fg_base01 .s:bg_none
+"
+" exe "hi! jsGlobalObjects"       .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsNan"                 .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsExceptions"          .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsFutureKeys"          .s:fmt_none .s:fg_base01 .s:bg_none
+" exe "hi! jsBuiltins"            .s:fmt_none .s:fg_base01 .s:bg_none
 
 "}}}
 
