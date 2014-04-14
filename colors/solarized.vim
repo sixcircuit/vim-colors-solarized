@@ -787,6 +787,9 @@ exe "let s:fg_violet    = ' ".s:vmode."fg=".s:violet ."'"
 exe "let s:fg_blue      = ' ".s:vmode."fg=".s:blue   ."'"
 exe "let s:fg_cyan      = ' ".s:vmode."fg=".s:cyan   ."'"
 
+" CommandT highlighting
+exe "hi! CommandTCharMatched" .s:fmt_bold .s:fg_orange .s:bg_none
+ 
 
 " JavaScript highlighting "{{{
 " ---------------------------------------------------------------------
