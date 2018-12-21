@@ -212,6 +212,7 @@ else
 endif
 call s:SetOption("termtrans",s:solarized_termtrans_default)
 call s:SetOption("degrade",0)
+call s:SetOption("grayscale",0)
 call s:SetOption("bold",1)
 call s:SetOption("underline",1)
 call s:SetOption("italic",1) " note that we need to override this later if the terminal doesn't support
@@ -299,23 +300,53 @@ elseif g:solarized_termcolors != 256 && &t_Co >= 16
     let s:cyan        = "6"
     let s:green       = "2"
 elseif g:solarized_termcolors == 256
-    let s:vmode       = "cterm"
-    let s:base03      = "234"
-    let s:base02      = "235"
-    let s:base01      = "239"
-    let s:base00      = "240"
-    let s:base0       = "244"
-    let s:base1       = "245"
-    let s:base2       = "187"
-    let s:base3       = "230"
-    let s:yellow      = "136"
-    let s:orange      = "166"
-    let s:red         = "124"
-    let s:magenta     = "125"
-    let s:violet      = "61"
-    let s:blue        = "33"
-    let s:cyan        = "37"
-    let s:green       = "64"
+    if (g:solarized_grayscale == 1)
+        let s:vmode       = "cterm"
+        let s:base03      = "234"
+        let s:base02      = "235"
+        let s:base01      = "239"
+        let s:base00      = "241"
+        let s:base0       = "244"
+        let s:base1       = "245"
+        let s:base2       = "247"
+        let s:base3       = "253"
+        let s:yellow      = "136"
+        let s:orange      = "166"
+        let s:red         = "124"
+        let s:magenta     = "125"
+        let s:violet      = "61"
+        let s:blue        = "33"
+        let s:cyan        = "37"
+        let s:green       = "64"
+        if (g:solarized_contrast == "higher")
+            let s:base03      = "234"
+            let s:base02      = "235" 
+            let s:base01      = "241" " 239
+            let s:base00      = "243" " 241
+            let s:base0       = "247" " 244
+            let s:base1       = "250" " 245
+            let s:base2       = "253" " 247
+            let s:base3       = "255" " 253
+        endif
+    else
+        let s:vmode       = "cterm"
+        let s:base03      = "234"
+        let s:base02      = "235"
+        let s:base01      = "239"
+        let s:base00      = "240"
+        let s:base0       = "244"
+        let s:base1       = "245"
+        let s:base2       = "187"
+        let s:base3       = "230"
+        let s:yellow      = "136"
+        let s:orange      = "166"
+        let s:red         = "124"
+        let s:magenta     = "125"
+        let s:violet      = "61"
+        let s:blue        = "33"
+        let s:cyan        = "37"
+        let s:green       = "64"
+    endif
 else
     let s:vmode       = "cterm"
     let s:bright      = "* term=bold cterm=bold"
@@ -396,7 +427,7 @@ endif
 "}}}
 " Optional contrast schemes "{{{
 " ---------------------------------------------------------------------
-if g:solarized_contrast == "high"
+if (g:solarized_contrast == "high")
     let s:base01      = s:base00
     let s:base00      = s:base0
     let s:base0       = s:base1
