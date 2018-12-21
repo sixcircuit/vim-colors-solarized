@@ -434,6 +434,8 @@ endif
 " Highlighting primitives"{{{
 " ---------------------------------------------------------------------
 
+let s:back = "NONE"
+
 exe "let s:bg_none      = ' ".s:vmode."bg=".s:none   ."'"
 exe "let s:bg_back      = ' ".s:vmode."bg=".s:back   ."'"
 exe "let s:bg_base03    = ' ".s:vmode."bg=".s:base03 ."'"
